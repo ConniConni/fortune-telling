@@ -20,7 +20,15 @@ def get_user_name():
 
 def run_app():
     """アプリケーションのメイン関数"""
+
+    # ユーザー名を取得
     user_name = get_user_name()
+
+    # 今日の日付を取得
     today = datetime.date.today()
-    print(f"{user_name}さんの{today.year}年{today.month}月{today.day}日の運勢は…")
+    today_str = today.strftime("%Y年%m月%d日")
+
+    # ユーザーに占い結果を表示
+    print(f"{user_name}さんの{today_str}の運勢は…")
+    # 占い結果表示処理呼び出し
     get_fortune_telling()
