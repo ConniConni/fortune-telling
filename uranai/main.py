@@ -1,7 +1,6 @@
 import datetime
 
-from .core import get_fortune_telling
-from .core import show_fortune_result
+from .core import generate_fortune_telling
 
 
 def get_user_name():
@@ -19,6 +18,15 @@ def get_user_name():
             print("名前は1文字以上で入力してください")
 
 
+def show_fortune_result(result_dict):
+    """占い結果を表示する関数"""
+
+    print("#################################")
+    for key, value in result_dict.items():
+        print(f"・{key}: {value}")
+    print("#################################")
+
+
 def run_app():
     """アプリケーションのメイン関数"""
 
@@ -32,6 +40,6 @@ def run_app():
     # ユーザーに占い結果を表示
     print(f"{user_name}さんの{today_str}の運勢は…")
     # 占い結果を取得
-    result_dict = get_fortune_telling()
+    result_dict = generate_fortune_telling()
     # 占い結果を表示
     show_fortune_result(result_dict)
