@@ -12,18 +12,6 @@ ADVICES = [
 RESULT_KEY = ["今日の運勢", "ラッキーカラー", "ラッキーナンバー", "一言アドバイス"]
 
 
-def deco(func):
-    """占い結果を強調するデコレータ関数"""
-
-    def wrapper():
-        print("#################################")
-        func()
-        print("#################################")
-
-    return wrapper
-
-
-@deco
 def get_fortune_telling():
     """
     占い結果を取得する関数
@@ -41,5 +29,13 @@ def get_fortune_telling():
     choice_advice = random.choice(ADVICES)
     result[RESULT_KEY[3]] = choice_advice
 
-    for dict in result.items():
-        print(f"{dict[0]}: {dict[1]}")
+    return result
+
+
+def show_fortune_result(result_dict):
+    """占い結果を表示する関数"""
+
+    print("#################################")
+    for key, value in result_dict.items():
+        print(f"・{key}: {value}")
+    print("#################################")
