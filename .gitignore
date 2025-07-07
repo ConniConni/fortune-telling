@@ -1,0 +1,6 @@
+# Pythonの仮想環境フォルダ
+venv/
+
+# Pythonが生成するキャッシュファイル
+__pycache__/
+*.pyc
