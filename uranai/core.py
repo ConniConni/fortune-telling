@@ -12,11 +12,22 @@ ADVICES = [
 RESULT_KEY = ["今日の運勢", "ラッキーカラー", "ラッキーナンバー", "一言アドバイス"]
 
 
+def deco(func):
+    """占い結果を強調するデコレータ関数"""
+
+    def wrapper():
+        print("#################################")
+        func()
+        print("#################################")
+
+    return wrapper
+
+
+@deco
 def get_fortune_telling():
     """
     占い結果を取得する関数
-    リストからランダムに取得する
-    結果は辞書型で返却する
+    リストからランダムに取得し、占い結果全体を辞書型にする
     """
 
     result = {}
@@ -30,4 +41,5 @@ def get_fortune_telling():
     choice_advice = random.choice(ADVICES)
     result[RESULT_KEY[3]] = choice_advice
 
-    return result
+    for dict in result.items():
+        print(f"{dict[0]}: {dict[1]}")
