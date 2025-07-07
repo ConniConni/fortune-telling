@@ -1,5 +1,7 @@
 import datetime
 
+from .core import get_fortune_telling
+
 
 def run_app():
     """
@@ -21,3 +23,4 @@ def run_app():
 
     today = datetime.date.today()
     print(f"{user_name}さんの{today.year}年{today.month}月{today.day}日の運勢は…")
+    get_fortune_telling()
