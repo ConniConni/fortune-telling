@@ -4,3 +4,6 @@ venv/
 # Pythonが生成するキャッシュファイル
 __pycache__/
 *.pyc
+
+# ログファイル
+fortune_telling_log.txt
