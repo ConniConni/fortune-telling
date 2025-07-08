@@ -5,7 +5,7 @@ from .core import generate_fortune_telling
 
 
 # mainモジュールのロガーを取得する
-logger = logging.getLogger("__name__")
+logger = logging.getLogger(__name__)
 
 
 def get_user_name():
