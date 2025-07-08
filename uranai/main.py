@@ -1,6 +1,11 @@
 import datetime
+import logging
 
 from .core import generate_fortune_telling
+
+
+# mainモジュールのロガーを取得する
+logger = logging.getLogger(__name__)
 
 
 def get_user_name():
@@ -30,6 +35,8 @@ def show_fortune_result(result_dict):
 def run_app():
     """アプリケーションのメイン関数"""
 
+    logger.info("アプリケーションを開始")
+
     # ユーザー名を取得
     user_name = get_user_name()
 
@@ -43,3 +50,6 @@ def run_app():
     result_dict = generate_fortune_telling()
     # 占い結果を表示
     show_fortune_result(result_dict)
+    logger.info(f"{user_name}さんの{today_str}の運勢は{result_dict}。")
+
+    logger.info("アプリケーションを終了")
